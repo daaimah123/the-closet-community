@@ -1,0 +1,86 @@
+.ExplorPage {
+    width: 600px;
+    margin: 0 auto;
+}
+.FeedItem span {
+    flex: 1;
+}
+.FeedItem img{
+    width: 100%;
+}
+.Likes button {
+    text-align: right;
+    background: #d8ae64;
+    border: none;
+    color: white;
+}
+#upload {
+    background: #d8ae64;
+    border: none;
+    color: white;
+}
+.ImageUpLoaderForm input {
+    flex-grow: 1;
+    padding: 5px;
+}
+.ImageUpLoaderForm{
+    display: flex
+}
+.FeedItem {
+    background: white;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+/***** DiaryPost  *****/
+.DiaryPost{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    background-color:#F5F5F5;
+    
+}
+
+#post{
+    flex: 1;
+    background: white;
+    border: 1px solid #ff9994;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    list-style: none;
+    margin-bottom: 25px;
+    margin-right: 200px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+#diaryButton{
+    padding: 5px;
+    color: #ff6961;
+    border-radius: 15px;
+    /* width: 20%; */
+    border: none;
+}
+#text{
+    text-decoration: underline;
+    line-height: 2;
+}
+.saveSpace{
+    text-align: center;
+    background: white;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    margin-left: 100px;
+    margin-top: 30px;
+    width: 300px;
+    
+   
+}
+li {
+    list-style-type: none;
+}
+/* homepage */
+#homepage{
+    background-image: url('https://s4827.pcdn.co/wp-content/uploads/2015/06/gay_pride_flag.jpg')
+}
