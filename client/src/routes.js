@@ -9,6 +9,7 @@ import Auth from './Auth/Auth';
 import history from './history';
 import DiaryPost from './diary/DiaryPost';
 import ExplorPage from './sharedSpace/ExplorPage';
+import ChatkitSignUps from './chatKit/ChatkitSignUps';
 
 const auth = new Auth();
 
@@ -50,6 +51,13 @@ export const makeMainRoutes = () => {
               <Redirect to="/home"/>
             ) : (
               <ExplorPage auth={auth} {...props} />
+            )
+          )} />
+          <Route path="/messager" render={(props) => (
+            !auth.isAuthenticated() ? (
+              <Redirect to="/home"/>
+            ) : (
+              <ChatkitSignUps auth={auth} {...props} />
             )
           )} />
           <Route path="/callback" render={(props) => {

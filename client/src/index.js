@@ -3,6 +3,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { makeMainRoutes } from './routes';
 import './style.css';
+require('dotenv').config();
 
 const routes = makeMainRoutes();
 
