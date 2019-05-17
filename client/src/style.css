@@ -38,6 +38,7 @@
     flex-direction: row;
     /* flex: 1; */
     background-color:#F5F5F5;
+    margin-top: -25px;
     
 }
 
@@ -127,13 +128,33 @@ li {
 }
 #homepage h4{
     padding-top: 500px;
+    margin-top: -20px;
 }
 /* navbar styling */
 .container-fluid{
     background-color: black;
     height: 90px;
 }
-.btn-margin{
-    border: none;
-    color: #F5F5F5;
+.navbar-header{
+    width: 100%;
+    float: right;
+    /* display: inline; */
+    /* background-color: red; */
+    margin: 0 auto;
+    padding-top: 25px;
+}
+.navbarButton{
+    /* border: none; */
+    /* background-color: blue; */
+    /* width: 80%; */
+    /* margin: 0 auto; */
+    /* color: #F5F5F5; */
+    float: right;
+}
+.btn-primary{
+    background-color: black;
+    
+}
+.btn-primary:hover{
+    background-color: #ff9994;
 }

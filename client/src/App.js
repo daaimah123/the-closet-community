@@ -26,16 +26,14 @@ class App extends Component {
 
   render() {
     const { isAuthenticated } = this.props.auth;
-   
-
-
     return (
       <div>
         <Navbar fluid>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">Auth0 - React</a>
+              <a href="#">The Closeted</a>
             </Navbar.Brand>
+            <div className='navbarButton'>
             <Button
               bsStyle="primary"
               className="btn-margin"
@@ -124,6 +122,7 @@ class App extends Component {
                   </Button>
                 )
             }
+            </div>
           </Navbar.Header>
         </Navbar>
       </div>

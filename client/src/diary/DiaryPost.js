@@ -219,8 +219,8 @@ class DiaryPost extends Component{
                         <br />
                     <div >
                         <Button id='addButton'onClick={this.handleShow}>Add New</Button>
-                 </div>
-            </div>
+                    </div>
+                </div>
             
                 <ul>
                   
