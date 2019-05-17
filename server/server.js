@@ -6,7 +6,16 @@ const jwksRsa = require('jwks-rsa');
 const cors = require('cors');
 const morgan = require('morgan');
 require('dotenv').config();
-var User = require('../03-Calling-an-API/model/user');
+const Chatkit = require('@pusher/chatkit-server');
+
+
+const chatkit = new Chatkit.default({
+  instanceLocator: process.env.INSTANCE_LOCATOR,
+  key:process.env.SECRET_KEY
+})
+
+
+
 
 const { Pool } = require('pg')
 const pool = new Pool({
@@ -22,6 +31,7 @@ if (!process.env.AUTH0_DOMAIN || !process.env.AUTH0_AUDIENCE) {
 app.use(cors());
 app.use(express.json())
 app.use(morgan('API Request (port 3002): :method :url :status :response-time ms - :res[content-length]'));
+
 
 const checkJwt = jwt({
   // Dynamically provide a signing key based on the kid in the header and the singing keys provided by the JWKS endpoint.
@@ -48,6 +58,34 @@ app.get('/api/public', function(req, res) {
 app.get('/api/private', checkJwt, function(req, res) {
   res.json({ message: "Hello from a private endpoint! You need to be authenticated  to see this." });
 });
+//chatkit users //
+app.post("/users/", (req, res) => {
+  const { username } = req.body;
+  console.log('this is the username')
+  chatkit
+    .createUser({
+      id: username,
+      name: username
+    })
+    .then(() => {
+      console.log(`User created: ${username}`);
+      res.sendStatus(201);
+    })
+    .catch(err => {
+      if (err.error === "services/chatkit/user_already_exists") {
+        console.log(`User already exists: ${username}`);
+        res.sendStatus(200);
+      } else {
+        res.status(err.status).json(err);
+      }
+    });
+});
+
+//Chatkit authenticate //
+app.post('/authenticate', (req, res) => {
+  const authData = chatkit.authenticate({ userId: req.query.user_id })
+  res.status(authData.status).send(authData.body)
+})
 
 ///send data to user d
 

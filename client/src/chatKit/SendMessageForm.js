@@ -24,6 +24,7 @@ class SendMessageForm extends React.Component{
                         type='text'
                         placeholder='add to the conversation'
                         onChange={this.onChange}
+                        value={this.state.message}
                     />
                     <input type='submit'/>
                 </form>

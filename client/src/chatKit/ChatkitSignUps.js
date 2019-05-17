@@ -1,6 +1,6 @@
 import React, {Component } from 'react'
 import ChatScreen from './ChatScreen'
-class ChatkitSignUps extends React.Component {
+class ChatkitSignUps extends Component {
     constructor(props){
         super()
         this.state = {
@@ -18,25 +18,25 @@ class ChatkitSignUps extends React.Component {
             let sub = profile.sub.split("|");
             let id = sub[1]
             console.log('this is the id:', id)
-            this.sendUser(id)
+            // this.sendUser(id)
             this.setState({
                 profile: profile,
                 username: id,
                 name: profile.name,
                 email: profile.email
-            })
+            },this.sendUser)
         });
         } else {
             let sub = userProfile.sub.split("|");
             let id = sub[1]
             console.log(id)
-            this.sendUser(id)
+            // this.sendUser(id)
         this.setState({
                 profile: userProfile,
                 username: id,
                 name: userProfile.name,
                 email: userProfile.email
-            });
+            },this.sendUser);
         
         }
         
@@ -44,6 +44,7 @@ class ChatkitSignUps extends React.Component {
 
     sendUser = () => {
         const {username} = this.state;
+        console.log(username)
         fetch('/users/',{
             method:'POST',
             headers:{
@@ -62,7 +63,7 @@ class ChatkitSignUps extends React.Component {
         })
     }
     render(){
-        const {currentScreen, username,currentUsername} = this.state;
+        const {currentScreen, currentUsername} = this.state;
         if(currentScreen === 'whatIsYourUsernameScreen'){
             return (
                 <div>

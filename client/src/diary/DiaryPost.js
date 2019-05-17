@@ -212,14 +212,14 @@ class DiaryPost extends Component{
         }else{
             return (
             <div className='DiaryPost'> 
-            <div className ='saveSpace'>
-                <h2>Welcome, {name}!<br/> this is a space for your thoughts you don't want other to know</h2>
-                <img src={profile.picture} alt="profile" />
-                    <br />
-                    <br />
-                <div>
-                    <Button onClick={this.handleShow}>Add New</Button>
-                </div>
+                <div className ='saveSpace'>
+                    <h2 className='h2DiaryPost'>Hi {name}!<br/> This is your space </h2>
+                    {/* <img src={profile.picture} alt="profile" /> */}
+                        <br />
+                        <br />
+                    <div >
+                        <Button id='addButton'onClick={this.handleShow}>Add New</Button>
+                 </div>
             </div>
             
                 <ul>
@@ -241,14 +241,15 @@ class DiaryPost extends Component{
                                             }
                                             <div id='diaryButton'>
                                                 <button id='diaryButton'onClick={()=>this.deletePost(post.diary_id, index)}>Delete</button>
-                                                <button  onClick={()=>this.handleEditPost(post.diary_id, index)}>Edit</button>
+                                                <button  id='diaryButton'onClick={()=>this.handleEditPost(post.diary_id, index)}>Edit</button>
                                             </div>
                                         </span> 
                                 </div>
                             </li>
                         ))
                     : 
-                        "NO POST YET!"
+                    <h2 className='h2DiaryPost'>Hi {name}!<br/> This is your space </h2>
+                        
                     }     
                    
                 </ul>
