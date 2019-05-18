@@ -91,17 +91,27 @@ class DiaryPost extends Component{
             headers:{
                 'Accept': 'application/json'
             }
+        }).then(()=>{
+            index = parseInt(index)
+            // go to db delete where diary_id is id
+            // if delete true the ....
+            let prevPost = this.state.posts
+            console.log('this is the prevPost',prevPost)
+            let newPost = prevPost.filter(post=>{
+                if(prevPost[index] !== post){
+                    console.log(prevPost[index])
+                    return post;
+                }
+            })
+            // let newPost = prevPost.splice(index, 1);
+            console.log(index)
+            
+            console.log('this is the newpost',newPost)
+            this.setState({
+                posts: newPost
+            })
         })
-        index = parseInt(index)
-        // go to db delete where diary_id is id
-        // if delete true the ....
-        let prevPost = this.state.posts
-        console.log(prevPost)
-        let newPost = prevPost.splice(index, 1)
-        console.log('this is the newpost',this.state.newpost)
-        this.setState({
-            posts: prevPost
-        })
+        
         // else alert the user something went wrong and try again
     }
 
@@ -154,8 +164,9 @@ class DiaryPost extends Component{
             post.diary_post = this.state.updatedPost
     
             let oldPosts = this.state.posts;
+            console.log(oldPosts)
             let newPosts = oldPosts.slice(this.state.selectedPost, 1, post)
-    
+                console.log('the Edited new Post',newPosts)
             this.setState({
                 posts: newPosts,
                 editPost: false,
