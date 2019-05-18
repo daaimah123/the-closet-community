@@ -62,8 +62,8 @@ class WhosOnlineListItem extends React.Component {
       },
     }
     return (
-      <li style={styles.li}>
-      <button onClick={() => this.props.handleUserChat(this.props.userId)} >Start Chat</button>
+      <li style={styles.li} id='WhosOnLine'>
+      <button id='WhoOnlineButton'onClick={() => this.props.handleUserChat(this.props.userId)} >Start Chat</button>
         <div style={{...styles.div, 
           backgroundColor: this.props.presenceState === 'online' ? 'green' : 'grey',
           }}

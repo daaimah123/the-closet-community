@@ -34,10 +34,10 @@ class Home extends Component {
     const { isAuthenticated } = this.props.auth;
     const {quote} = this.state;
     return (
-      <div id='homepage'className="container">
+      <div className="container">
         {
           isAuthenticated() && (
-              <p>
+              <p id='qoutes'>
                 {quote.qoutes}<br/>-{quote.creater}
               </p>
             )
@@ -46,18 +46,12 @@ class Home extends Component {
           !isAuthenticated() && (
             
             
-             <h4>
-               <div>{quote.qoutes}<br/>-{quote.creater}</div>
-               
-                You are not logged in! Please{' '}
-               
-                <a
-                  style={{ cursor: 'pointer' }}
-                  onClick={this.login.bind(this)}
-                >
-                  Log In
-                </a>
-                {' '}to continue.
+             <h4 id='homepage'>
+               <div>{quote.qoutes}<br/><br/>-{quote.creater}</div>
+               <br/>
+              <button className='loginButton'onClick={this.login.bind(this)}>
+                  login
+                </button>
               </h4>
             )
         }

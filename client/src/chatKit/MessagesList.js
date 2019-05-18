@@ -35,23 +35,20 @@ class MessagesList extends Component {
        },
        message: { 
          fontSize: 15,
-         background: '#17a2b8',
-        color: 'black',
+         background: 'black',
+        color: 'gray',
         display: 'inline',
         padding: '4px 8px',
-        borderRadius: '8px',
+        borderRadius: '10px',
       },
      }
 
      if (!this.props.roomId){
        return (
-         <div>
-          <h3>
-          <br/><br/><br/><br/><br/><br/>
-          &larr; Start a Private Chat with Another Member! 
-          <br/><br/><br/> &larr; See "Your Rooms" to Join A Chat!
-          <br/><br/><br/> &larr;  Create a New Public Room for Others to Join!
-           </h3>
+         <div className='chatRoomOpening'>
+          <p>
+          Contribute to the Conversation <br/> Or <br/> Start Your Own
+          </p>
          </div>
        )
      }

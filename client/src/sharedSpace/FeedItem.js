@@ -8,7 +8,7 @@ class FeedItem extends Component{
         return(
             <div className ='FeedItem'>
                 
-                    <img  src = {url}/>
+                    <img  src ={url}/>
                     <h1>{caption}</h1>
                     <Likes Likes={likes}/>
                

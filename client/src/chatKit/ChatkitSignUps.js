@@ -66,8 +66,8 @@ class ChatkitSignUps extends Component {
         const {currentScreen, currentUsername} = this.state;
         if(currentScreen === 'whatIsYourUsernameScreen'){
             return (
-                <div>
-                    <h1>something went really wrong</h1>
+                <div id='secertMessage'>
+                    <h1>you are loved </h1>
                 </div>
             )
         }else if (currentScreen === 'ChatScreen'){

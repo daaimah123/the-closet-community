@@ -158,8 +158,9 @@ class ChatScreen extends Component {
             width: '300px',
             flex: 'none',
             padding: 20,
-            backgroundColor: 'goldenrod',
-            color: 'black',
+            backgroundColor: 'black',
+            color: 'white',
+           
           },
           chatListContainer: {
             padding: 20,
@@ -169,8 +170,8 @@ class ChatScreen extends Component {
           },
        }
        return (
-        <div>
-            <h1 className='text-center'>Hello, {this.props.currentUsername}! Welcome to the Chat Room! </h1>
+        <div className='chatbody'>
+            {/* <h1 className='text-center'>Hello, {this.props.currentUsername}! Welcome to the Chat Room! </h1> */}
             <div style={styles.container}>
                 <div style={styles.chatContainer}>
                     <aside style={styles.whosOnlineListContainer}>

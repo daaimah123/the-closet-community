@@ -8,6 +8,7 @@ class ImageUploaderForm extends Component{
             editPost:false,
             caption:'',
             authid:this.props.authId
+
            
             
         }
@@ -37,6 +38,7 @@ class ImageUploaderForm extends Component{
             url: this.state.url,
             cation: this.state.caption
         }
+        console.log('this is the payload',payload)
         fetch('/explorpage/',{
             method: 'POST',
             body:JSON.stringify(payload),
@@ -44,14 +46,20 @@ class ImageUploaderForm extends Component{
                 'Content-Type':'application/json'
             }
          })
-        .then(res=>{return res.json()})
+        .then(res=>{return res.json()}).then(()=>{
+            this.setState({editPost:false});
+            this.handleClose();
+        })
         console.log('handlesumit',this.state)
         this.setState({editPost:false});
+        // this.handleClose
+       
     }
     render(){
         return(
-            <div className=''>
-                <button id='upload' onClick={this.handleShow}> share your thoughts </button>
+            <div className='addButton'>
+            <p>Share what you like</p>
+                <button id='upload' onClick={this.handleShow}> + here</button>
                 <Modal show={this.state.editPost} onHide={this.state.handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Body>
@@ -66,7 +74,7 @@ class ImageUploaderForm extends Component{
                                 Cancel
                                 </Button>
                                 <Button variant="primary" onClick={this.handleSumit}>
-                                    Save Changes
+                                    share to all
                                 </Button>
                             </div>
                             </Modal.Body>

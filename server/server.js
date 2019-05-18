@@ -180,11 +180,13 @@ app.get('/explorpage/',async(req,res)=>{
 app.post('/explorpage/',async (req,res)=>{
   console.log('this is the body',req.body)
   const client = await pool.connect();
-  var events = await client.query('INSERT INTO diaryEntries VALUES (default,$1,$2,$3,$4) RETURNING *',[
-     req.body.diary_post,
-     req.body.created_at,
-     req.body.updated_at,
-     req.body.authId,
+  var events = await client.query('INSERT INTO explorpage VALUES (default,$1,$2,$3,$4) RETURNING *',[
+    req.body.authid,
+    req.body.url,
+    req.body.likes,
+     req.body.cation,
+    
+     
     
   ]);
   console.log(req);

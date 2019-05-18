@@ -96,9 +96,11 @@ class DiaryPost extends Component{
         // go to db delete where diary_id is id
         // if delete true the ....
         let prevPost = this.state.posts
+        console.log(prevPost)
         let newPost = prevPost.splice(index, 1)
+        console.log('this is the newpost',this.state.newpost)
         this.setState({
-            posts: newPost
+            posts: prevPost
         })
         // else alert the user something went wrong and try again
     }
@@ -218,7 +220,7 @@ class DiaryPost extends Component{
                         <br />
                         <br />
                     <div >
-                        <Button id='addButton'onClick={this.handleShow}>Add New</Button>
+                        <Button id='addButton'onClick={this.handleShow}> + Add to it</Button>
                     </div>
                 </div>
             

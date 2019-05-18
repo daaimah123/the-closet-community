@@ -31,7 +31,7 @@ class App extends Component {
         <Navbar fluid>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">The Closeted</a>
+              <a id='title' href="#">The Closeted</a>
             </Navbar.Brand>
             <div className='navbarButton'>
             <Button
@@ -53,7 +53,7 @@ class App extends Component {
                   </Button>
                 )
             }
-            {
+            {/* {
               isAuthenticated() && (
                   <Button
                     bsStyle="primary"
@@ -63,8 +63,8 @@ class App extends Component {
                     Profile
                   </Button>
                 )
-            }
-            {
+            } */}
+            {/* {
               isAuthenticated() && (
                   <Button
                     bsStyle="primary"
@@ -74,7 +74,7 @@ class App extends Component {
                     Ping
                   </Button>
                 )
-            }
+            } */}
             {
               isAuthenticated() && (
                   <Button
@@ -94,7 +94,7 @@ class App extends Component {
                     className="btn-margin"
                     onClick={this.goTo.bind(this, 'ExplorPage')}
                   >
-                    Explor Page
+                    Explore Page
                   </Button>
                 )
             }
@@ -106,7 +106,7 @@ class App extends Component {
                     className="btn-margin"
                     onClick={this.goTo.bind(this, 'messager')}
                   >
-                    messager
+                    Messager
                   </Button>
                 )
             }
