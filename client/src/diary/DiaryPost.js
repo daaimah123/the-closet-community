@@ -159,16 +159,19 @@ class DiaryPost extends Component{
                 body:JSON.stringify(payload),
                 headers:{'Content-Type':'application/json'}
             }).then(res => res.json());
-
-            let post = this.state.posts[this.state.selectedPost]
-            post.diary_post = this.state.updatedPost
-    
+            // let editPost = this.state.posts[this.state.selectedPost]
             let oldPosts = this.state.posts;
             console.log(oldPosts)
-            let newPosts = oldPosts.slice(this.state.selectedPost, 1, post)
-                console.log('the Edited new Post',newPosts)
+            // let newPosts = oldPosts.slice(this.state.selectedPost, 1, post)
+            let newPost = oldPosts.map(post=>{
+                
+                if(post.diary_id === id ){
+                    post.diary_post = this.state.updatedPost;
+                }
+            })
+                console.log('the Edited new Post',newPost)
             this.setState({
-                posts: newPosts,
+                posts: newPost,
                 editPost: false,
                 selectedPost: "",
                 postId: "",
@@ -254,7 +257,7 @@ class DiaryPost extends Component{
                                             }
                                             <div id='diaryButton'>
                                                 <button id='diaryButton'onClick={()=>this.deletePost(post.diary_id, index)}>Delete</button>
-                                                <button  id='diaryButton'onClick={()=>this.handleEditPost(post.diary_id, index)}>Edit</button>
+                                                {/* <button  id='diaryButton'onClick={()=>this.handleEditPost(post.diary_id, index)}>Edit</button> */}
                                             </div>
                                         </span> 
                                 </div>
