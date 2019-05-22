@@ -76,9 +76,10 @@ class DiaryPost extends Component{
             .then(res=>{return res.json()})
             .then(userPosts => {
                 console.log('users post',userPosts)
+                let reversePost = userPosts.reverse();
                 this.setState({
                     isLoaded: true,
-                    posts: userPosts
+                    posts: reversePost
                 });
             
             }).catch(err => console.log(err))
@@ -189,6 +190,12 @@ class DiaryPost extends Component{
             }
             console.log(payload);
             // console.log('this is payload',payload)
+            let LetsUnshift =function(array, item){ 
+                for (var i = array.length - 1; i >=0; i--) {
+                   array[i +1] = array[i];
+                }
+                array[0] = item;
+           };
              fetch(`/diary`,{
                 method: 'POST',
                 body:JSON.stringify(payload),
@@ -198,10 +205,17 @@ class DiaryPost extends Component{
              })
             .then(res=>{return res.json()})
             .then(newpost => {
+                // console.log(newpost)
+                // let oldPost = this.state.posts;
+               
+            //    let addedPost = LetsUnshift(oldPost,payload)
+        
+                // console.log('this is addPost', addedPost)
                 this.setState({
                     updatedPost: "",
                     editPost: false,
-                    posts: [...this.state.posts, newpost]
+                    // posts:addedPost
+                    posts: [...this.state.posts,newpost]
                 })
                 
             
