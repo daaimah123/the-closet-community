@@ -35,6 +35,9 @@ npm start \\ to start the React app
 
 ## Data Model 
 Database Name: closeted
+
+Table Name: userData
+
 Columns:
 
 | diary_id | diary_post | created_at | updated_at | authid|
