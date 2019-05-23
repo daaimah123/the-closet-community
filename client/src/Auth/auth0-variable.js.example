@@ -1,6 +1,6 @@
 export const AUTH_CONFIG = {
   domain: 'yourdomain.auth0.com',
-  clientId: 'aaaaaaaabbbbbcccc00011122',
+  clientID: 'aaaaaaaabbbbbcccc00011122',
   redirectUri: 'http://localhost:3000/callback',
   audience: 'https://friend',
 }
