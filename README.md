@@ -15,7 +15,9 @@ Download to your project directory, add `README.md`, and commit:
 1. clone this repo
 2.  cd sever folder
 3. install dependencies
-4. add http://localhost:3000 to auth0 "Allowed Callback URLs" section
+4. create an auth0 account
+5. create an api in auth0 and make the url/audience https://friend
+6. go to applications where your api app will now be, click it and add http://localhost:3000/callback to your auth0 "Allowed Callback URLs" section and save changes
 
 ```sh
 cd server
