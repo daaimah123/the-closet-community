@@ -31,6 +31,19 @@ cd client
 npm install
 npm start \\ to start the React app
 ```
+
+
+## Data Model 
+Database Name: closeted
+Columns:
+
+| diary_id | diary_post | created_at | updated_at | authid|
+|----------|:----------:|-----------:|-----------:|------:|
+|          |            |            |            |       |
+|          |            |            |            |       |
+|          |            |            |            |       |
+
+
 ## Feature list
 
 - private diary, for personal notes
