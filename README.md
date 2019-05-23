@@ -15,6 +15,7 @@ Download to your project directory, add `README.md`, and commit:
 1. clone this repo
 2.  cd sever folder
 3. install dependencies
+4. add http://localhost:3000 to auth0 "Allowed Callback URLs" section
 
 ```sh
 cd server
